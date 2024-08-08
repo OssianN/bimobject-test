@@ -22,13 +22,13 @@ export const SearchField = ({ form, handleSubmit }: SearchFieldProps) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="flex gap-2 mb-12"
+        className="flex gap-2 mb-12 w-full"
       >
         <FormField
           control={form.control}
           name="searchInput"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="w-full">
               <FormControl>
                 <Input
                   {...field}

@@ -8,7 +8,11 @@ import { useSearchParams } from 'next/navigation';
 import { formSchema, type SearchResultResponse, type FormType } from '@/types';
 import { useRouter } from 'next/navigation';
 
-export const Search = () => {
+type SearchProps = {
+  serverSearchResult: SearchResultResponse;
+};
+
+export const Search = ({ serverSearchResult }: SearchProps) => {
   const [searchResults, setSearchResults] =
     useState<SearchResultResponse | null>(null);
   const searchText = useSearchParams().get('searchText') ?? '';
@@ -38,9 +42,9 @@ export const Search = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center w-full max-w-search-width">
       <SearchField form={form} handleSubmit={handleSubmit} />
-      <SearchResults searchResults={searchResults} />
+      <SearchResults searchResults={searchResults ?? serverSearchResult} />
     </div>
   );
 };
