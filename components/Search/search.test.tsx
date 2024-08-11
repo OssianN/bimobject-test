@@ -1,5 +1,4 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { movieResponseMock } from '@/__fixtures__/movieResponseMock';
 import { Search } from '.';
 import { getMovieMock } from '@/utils/mock-handlers';
 import { server } from '@/utils/mock-server';

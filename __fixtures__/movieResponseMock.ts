@@ -1,32 +1,78 @@
-export const movieResponseMock = {
-  Title: 'The Lion King',
-  Year: '1994',
-  Rated: 'G',
-  Released: '24 Jun 1994',
-  Runtime: '88 min',
-  Genre: 'Animation, Adventure, Drama',
-  Director: 'Roger Allers, Rob Minkoff',
-  Writer: 'Irene Mecchi, Jonathan Roberts, Linda Woolverton',
-  Actors: 'Matthew Broderick, Jeremy Irons, James Earl Jones',
-  Plot: 'A young lion prince is cast out of his pride by his cruel uncle, who claims he killed his father. While the uncle rules with an iron paw, the prince grows up beyond the Savannah, living by a philosophy: No worries for the rest of your days. But when his past comes to haunt him, the young prince must decide his fate: Will he remain an outcast or face his demons and become what he needs to be?',
-  Language: 'English, Swahili, Xhosa, Zulu',
-  Country: 'United States',
-  Awards: 'Won 2 Oscars. 43 wins & 35 nominations total',
-  Poster:
-    'https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg',
-  Ratings: [
-    { Source: 'Internet Movie Database', Value: '8.5/10' },
-    { Source: 'Rotten Tomatoes', Value: '92%' },
-    { Source: 'Metacritic', Value: '88/100' },
+export const moviesResponseMock = {
+  Search: [
+    {
+      Title: 'The Lion King',
+      Year: '1994',
+      imdbID: 'tt0110357',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg',
+    },
+    {
+      Title: 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe',
+      Year: '2005',
+      imdbID: 'tt0363771',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BMTc0NTUwMTU5OV5BMl5BanBnXkFtZTcwNjAwNzQzMw@@._V1_SX300.jpg',
+    },
+    {
+      Title: 'Lion',
+      Year: '2016',
+      imdbID: 'tt3741834',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BMjA3NjkzNjg2MF5BMl5BanBnXkFtZTgwMDkyMzgzMDI@._V1_SX300.jpg',
+    },
+    {
+      Title: "The Lion King 2: Simba's Pride",
+      Year: '1998',
+      imdbID: 'tt0120131',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BY2Y3MTk2MDgtOTc1Yy00ZmFjLThlNTEtMDQ1Y2EzZmRjMzVjXkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_SX300.jpg',
+    },
+    {
+      Title: 'The Lion King 3: Hakuna Matata',
+      Year: '2004',
+      imdbID: 'tt0318403',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BOGZiMDQ1YTQtMGVlOC00OTJiLWFkYzMtYjdiYmY0NWM5YzVjXkEyXkFqcGdeQXVyOTg4MDk3MTQ@._V1_SX300.jpg',
+    },
+    {
+      Title: 'The Lion in Winter',
+      Year: '1968',
+      imdbID: 'tt0063227',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BMTkzNzYyMzA5N15BMl5BanBnXkFtZTgwODcwODQ3MDI@._V1_SX300.jpg',
+    },
+    {
+      Title: 'The Lion of the Desert',
+      Year: '1980',
+      imdbID: 'tt0081059',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BNGUxMDYzNjktNjgwZi00ZjIwLTgwNzItNDQ5Mzg5ZWU0YWRlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg',
+    },
+    {
+      Title: 'The Wind and the Lion',
+      Year: '1975',
+      imdbID: 'tt0073906',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BODA2YWFhMmMtMTRlZC00YTJlLWJlODEtNGEzMTBmYTA3MWNjXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg',
+    },
+    {
+      Title: 'Marakkar: Lion of the Arabian Sea',
+      Year: '2021',
+      imdbID: 'tt8345300',
+      Type: 'movie',
+      Poster:
+        'https://m.media-amazon.com/images/M/MV5BMzM4YzI4YzQtYjBlOS00YThhLWI3N2QtNWJhY2JjOThmMGRiXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg',
+    },
   ],
-  Metascore: '88',
-  imdbRating: '8.5',
-  imdbVotes: '1,153,622',
-  imdbID: 'tt0110357',
-  Type: 'movie',
-  DVD: 'N/A',
-  BoxOffice: '$424,704,319',
-  Production: 'N/A',
-  Website: 'N/A',
+  totalResults: '665',
   Response: 'True',
 };

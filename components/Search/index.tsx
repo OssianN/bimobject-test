@@ -5,16 +5,20 @@ import { SearchResults } from '../SearchResults';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { formSchema, type SearchResultResponse, type FormType } from '@/types';
+import {
+  formSchema,
+  type SearchResultListResponse,
+  type FormType,
+} from '@/types';
 import { LoadingSpinner } from '../ui/spinner';
 
 type SearchProps = {
-  serverSearchResult?: SearchResultResponse;
+  serverSearchResult?: SearchResultListResponse;
 };
 
 export const Search = ({ serverSearchResult }: SearchProps) => {
   const [searchResults, setSearchResults] = useState<
-    SearchResultResponse | undefined
+    SearchResultListResponse | undefined
   >(serverSearchResult);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
@@ -42,7 +46,7 @@ export const Search = ({ serverSearchResult }: SearchProps) => {
       body: JSON.stringify({ searchText: searchInput }),
     });
 
-    const data: { result: SearchResultResponse; error?: string } =
+    const data: { result: SearchResultListResponse; error?: string } =
       await response.json();
 
     setSearchResults(data.result);
@@ -51,7 +55,7 @@ export const Search = ({ serverSearchResult }: SearchProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-search-width">
+    <div className="flex flex-col items-center w-full">
       <SearchForm form={form} onSubmit={onSubmit} />
       <SearchResults searchResults={searchResults} />
       {loading && <LoadingSpinner />}

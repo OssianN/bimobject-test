@@ -1,27 +1,33 @@
+'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { getDefaultAnimation, parseUrl } from '@/lib/utils';
-import type { SearchResultResponse } from '@/types';
 
 type MoviePosterProps = {
-  searchResults: SearchResultResponse;
+  Poster: string;
+  id: string;
+  animationDelay?: number;
 };
 
-export const MoviePoster = ({ searchResults }: MoviePosterProps) => (
+export const MoviePoster = ({
+  Poster,
+  id,
+  animationDelay,
+}: MoviePosterProps) => (
   <>
-    {parseUrl(searchResults.Poster) && (
+    {parseUrl(Poster) && (
       <motion.div
-        key={`image ${searchResults.imdbID}`}
-        {...getDefaultAnimation(0)}
+        key={`image ${id}`}
+        {...getDefaultAnimation(animationDelay ?? 0)}
         className="relative"
       >
         <Image
-          src={searchResults.Poster}
-          data-testid={searchResults.Poster}
+          src={Poster}
+          data-testid={Poster}
           width={200}
           height={400}
           alt="movie poster"
-          className="shadow-3xl rounded-sm"
+          className="shadow-3xl rounded-sm w-48 flex-1"
         />
         <div className="blur-3xl absolute -top-40 -left-10 -z-20 -skew-x-12">
           <motion.div

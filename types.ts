@@ -11,6 +11,19 @@ type SearchResultRating = {
   Value: string;
 };
 
+export type MovieListItem = {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+};
+
+export type SearchResultListResponse = {
+  Search: MovieListItem[];
+  totalResults: string;
+};
+
 export type SearchResultResponse = {
   Title: string;
   Year: string;

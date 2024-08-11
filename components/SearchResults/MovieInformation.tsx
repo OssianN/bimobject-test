@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'framer-motion';
 import { getDefaultAnimation } from '@/lib/utils';
 import type { SearchResultResponse } from '@/types';

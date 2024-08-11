@@ -1,33 +1,27 @@
 import { render, screen } from '@testing-library/react';
 import { SearchResults } from '.';
-import { movieResponseMock } from '@/__fixtures__/movieResponseMock';
+import { moviesResponseMock } from '@/__fixtures__/movieResponseMock';
 
 const setupTest = () => {
-  render(<SearchResults searchResults={movieResponseMock} />);
+  render(<SearchResults searchResults={moviesResponseMock} />);
 };
 
 describe('Search Component', () => {
   it('should render the title', () => {
     setupTest();
 
-    const title = screen.getByText(movieResponseMock.Title);
-
-    expect(title).toBeInTheDocument();
+    moviesResponseMock.Search.forEach(movie => {
+      const title = screen.getByText(movie.Title);
+      expect(title).toBeInTheDocument();
+    });
   });
 
   it('should render the poster', () => {
     setupTest();
 
-    const img = screen.getByTestId(movieResponseMock.Poster);
-
-    expect(img).toBeInTheDocument();
-  });
-
-  it('should render the plot', () => {
-    setupTest();
-
-    const plot = screen.getByText(movieResponseMock.Plot);
-
-    expect(plot).toBeInTheDocument();
+    moviesResponseMock.Search.forEach(movie => {
+      const img = screen.getByTestId(movie.Poster);
+      expect(img).toBeInTheDocument();
+    });
   });
 });

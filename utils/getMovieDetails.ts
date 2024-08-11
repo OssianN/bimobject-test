@@ -1,6 +1,6 @@
 import type { SearchResultResponse } from '@/types';
 
-export const getMovies = async (
+export const getMovieDetails = async (
   searchText: string
 ): Promise<SearchResultResponse> => {
   const apiKey = process.env.OMDB_API_KEY;
@@ -16,7 +16,7 @@ export const getMovies = async (
   const encodedSearch = encodeURIComponent(searchText);
 
   const response = await fetch(
-    `http://www.omdbapi.com/?apikey=${apiKey}&t=${encodedSearch}&plot=full`
+    `http://www.omdbapi.com/?apikey=${apiKey}&i=${encodedSearch}&plot=full`
   );
 
   return await response.json();
