@@ -11,17 +11,24 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import type { FormType } from '@/types';
 import type { UseFormReturn } from 'react-hook-form';
+import { motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 
-type SearchFieldProps = {
+type SearchFormProps = {
   form: UseFormReturn<FormType, any, undefined>;
-  handleSubmit: () => void;
+  onSubmit: () => void;
 };
 
-export const SearchField = ({ form, handleSubmit }: SearchFieldProps) => {
+export const SearchForm = ({ form, onSubmit }: SearchFormProps) => {
+  const searchText = useSearchParams().get('searchText') ?? '';
+
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(handleSubmit)}
+      <motion.form
+        data-testid="search-form"
+        initial={{ y: searchText ? 0 : 'calc(50vh - 16rem)' }}
+        animate={{ y: searchText ? 0 : 'calc(50vh - 16rem)' }}
+        onSubmit={form.handleSubmit(onSubmit)}
         className="flex gap-2 mb-12 w-full"
       >
         <FormField
@@ -42,7 +49,7 @@ export const SearchField = ({ form, handleSubmit }: SearchFieldProps) => {
           )}
         />
         <Button type="submit">Search</Button>
-      </form>
+      </motion.form>
     </Form>
   );
 };

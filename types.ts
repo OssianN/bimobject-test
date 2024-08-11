@@ -37,4 +37,5 @@ export type SearchResultResponse = {
   Production: string;
   Website: string;
   Response: string;
+  Error?: string;
 };
