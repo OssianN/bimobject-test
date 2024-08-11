@@ -75,6 +75,9 @@ const config = {
       maxWidth: {
         'search-width': 'var(--max-search-width)',
       },
+      backgroundImage: {
+        'linear-gradient': 'linear-gradient(to bottom, transparent,  #1d4ed8)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
